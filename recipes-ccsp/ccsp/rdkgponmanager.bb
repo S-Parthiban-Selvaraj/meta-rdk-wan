@@ -8,12 +8,12 @@ DEPENDS = "ccsp-common-library dbus rdk-logger utopia hal-platform json-hal-lib"
 require recipes-ccsp/ccsp/ccsp_common.inc
 
 # Please use below part only for official release and release candidates
-GIT_TAG = "v1.6.0"
-SRC_URI = "git://github.com/rdkcentral/gpon-manager.git;branch=releases/1.6.0-main;protocol=https;name=GponManager;tag=${GIT_TAG}"
+GIT_TAG = "v1.7.0"
+SRC_URI := "git://github.com/rdkcentral/gpon-manager.git;branch=releases/1.7.0-main;protocol=https;name=GPONManager;tag=${GIT_TAG}"
 PV = "${GIT_TAG}+git${SRCPV}"
 
 # Please use below part only for release verification/testing
-#SRC_URI = "git://github.com/rdkcentral/gpon-manager.git;branch=releases/1.7.0-main;protocol=https;name=GponManager;"
+#SRC_URI := "git://github.com/rdkcentral/gpon-manager.git;branch=releases/1.7.0-main;protocol=https;name=GPONManager;tag=${GIT_TAG}"
 #SRCREV = "${AUTOREV}"
 
 EXTRA_OECONF_append  = " --with-ccsp-platform=bcm --with-ccsp-arch=arm "
@@ -43,7 +43,6 @@ CFLAGS_append  = " ${@bb.utils.contains('DISTRO_FEATURES', 'rdkb_wan_manager', '
 do_compile_prepend () {
     (${PYTHON} ${STAGING_BINDIR_NATIVE}/dm_pack_code_gen.py ${S}/config/RdkGponManager.xml ${S}/source/GponManager/dm_pack_datamodel.c)
 }
-
 
 do_install () {
     # Config files and scripts
