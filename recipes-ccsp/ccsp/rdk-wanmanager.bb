@@ -94,7 +94,6 @@ do_install_append () {
     install -m 644 ${S}/config/${XML_NAME} ${D}/usr/rdk/wanmanager/RdkWanManager.xml
 }
 
-
 FILES_${PN} = " \
    ${exec_prefix}/rdk/wanmanager/wanmanager \
    ${exec_prefix}/rdk/wanmanager/netmonitor \
