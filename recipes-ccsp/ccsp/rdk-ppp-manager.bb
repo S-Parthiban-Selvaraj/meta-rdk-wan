@@ -47,7 +47,6 @@ do_install_append () {
     echo "sha value for recipe " + ${SRCREV_PppManager}
 }
 
-
 FILES_${PN} = " \
    ${exec_prefix}/rdk/pppmanager/pppmanager \
    ${exec_prefix}/rdk/pppmanager/RdkPppManager.xml \

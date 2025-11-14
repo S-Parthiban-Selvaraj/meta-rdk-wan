@@ -11,7 +11,6 @@ GIT_TAG = "v1.4.0"
 SRC_URI := "git://github.com/rdkcentral/ipoe-health-check.git;branch=releases/1.4.0-main;protocol=https;name=IPoEHealthCheck;tag=${GIT_TAG}"
 PV = "${GIT_TAG}+git${SRCPV}"
 
-
 S = "${WORKDIR}/git"
 
 inherit autotools pkgconfig
